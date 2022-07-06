@@ -1,0 +1,21 @@
+{
+  "extends": "./node_modules/gts/",
+  "rules": {
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "node/no-unpublished-import": [
+      "error",
+      {
+        "allowModules": ["vitest"]
+      }
+    ],
+    "@typescript-eslint/consistent-type-imports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["packages/**"],
+      "rules": {
+        "node/no-extraneous-import": "off"
+      }
+    }
+  ]
+}

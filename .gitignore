@@ -1,0 +1,12 @@
+node_modules
+coverage
+build
+data
+.env
+test.*
+*.private.*
+*-debug.*
+tests
+**/lib/**/*.d.ts
+**/lib/**/*.js
+dist

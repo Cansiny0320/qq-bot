@@ -1,0 +1,60 @@
+{
+  "name": "@qq-bot/plugin-handle-cqupt",
+  "version": "1.0.0",
+  "description": "a plugin for handle-cqupt",
+  "keywords": [
+    "handle-cqupt"
+  ],
+  "homepage": "https://github.com/Cansiny0320/qq-group-bot",
+  "bugs": {
+    "url": "https://github.com/Cansiny0320/qq-group-bot/issues"
+  },
+  "license": "MIT",
+  "author": "Cansiny0320 <cansiny1220@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cansiny0320/qq-group-bot.git",
+    "directory": "packages/plugins/greet"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp --commit --push && pnpm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@qq-bot/common": "workspace:^1.0.0",
+    "@qq-bot/core": "workspace:*",
+    "node-schedule": "^2.1.0",
+    "qs": "^6.10.3"
+  },
+  "devDependencies": {
+    "@types/qs": "^6.9.7"
+  }
+}

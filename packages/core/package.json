@@ -1,0 +1,55 @@
+{
+  "name": "@qq-bot/core",
+  "version": "1.8.12",
+  "description": "a qq-bot core base oicq",
+  "keywords": [
+    "qq-bot",
+    "oicq"
+  ],
+  "homepage": "https://github.com/Cansiny0320/qq-group-bot#README",
+  "bugs": {
+    "url": "https://github.com/Cansiny0320/qq-group-bot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cansiny0320/qq-group-bot.git",
+    "directory": "packages/core"
+  },
+  "license": "MIT",
+  "author": "Cansiny0320 <cansiny1220@gmail.com>",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp --commit --push && pnpm publish --no-git-checks --access=public",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "oicq": "^2.2.2"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "dist",
+    "noEmit": true,
+    "declaration": true,
+    "declarationDir": "./dist",
+    "lib": ["dom"]
+  },
+  "references": [
+    {
+      "path": "../../core/"
+    },
+    {
+      "path": "../../common/"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "extends": "../../tsconfig.json",
+  "references": [
+    {
+      "path": "./ban4repeat/"
+    },
+    {
+      "path": "./greet/"
+    },
+    {
+      "path": "./handle-cqupt/"
+    },
+    {
+      "path": "./jwzx/"
+    },
+    {
+      "path": "./news/"
+    },
+    {
+      "path": "./recallKeyword/"
+    },
+    {
+      "path": "./replyKeyword/"
+    },
+    {
+      "path": "./weather/"
+    },
+    {
+      "path": "./what2Eat/"
+    }
+  ]
+}

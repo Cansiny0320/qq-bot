@@ -1,0 +1,64 @@
+{
+  "name": "@qq-bot/plugin-news",
+  "version": "1.0.0",
+  "description": "a plugin for news",
+  "keywords": [
+    "news"
+  ],
+  "homepage": "https://github.com/Cansiny0320/qq-group-bot",
+  "bugs": {
+    "url": "https://github.com/Cansiny0320/qq-group-bot/issues"
+  },
+  "license": "MIT",
+  "author": "Cansiny0320 <cansiny1220@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cansiny0320/qq-group-bot.git",
+    "directory": "packages/plugins/greet"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp --commit --push && pnpm publish --no-git-checks --access=public",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@qq-bot/common": "workspace:*",
+    "axios": "^0.26.1",
+    "cheerio": "1.0.0-rc.10",
+    "node-schedule": "^2.1.0",
+    "puppeteer": "^13.5.2"
+  },
+  "devDependencies": {
+    "@qq-bot/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@qq-bot/core": "workspace:*"
+  }
+}

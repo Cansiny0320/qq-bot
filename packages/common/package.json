@@ -1,0 +1,58 @@
+{
+  "name": "@qq-bot/common",
+  "version": "1.0.3",
+  "description": "common",
+  "keywords": [],
+  "homepage": "https://github.com/Cansiny0320/qq-group-bot#README",
+  "bugs": {
+    "url": "https://github.com/Cansiny0320/qq-group-bot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cansiny0320/qq-group-bot.git",
+    "directory": "packages/common"
+  },
+  "license": "MIT",
+  "author": "Cansiny0320 <cansiny1220@gmail.com>",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "nr build",
+    "release": "bumpp --commit --push && pnpm publish --no-git-checks --access=public",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "axios-retry": "^3.2.4",
+    "dayjs": "^1.11.0",
+    "picocolors": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0"
+  }
+}
